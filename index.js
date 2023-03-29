@@ -31,6 +31,7 @@ app.post('/api/terminal', async (req, res) => {
         conn.release()
     }).catch(err =>{
         console.log("Error executing query: ", err);
+        res.status(500).send(err)
         conn.release();
     })
     
